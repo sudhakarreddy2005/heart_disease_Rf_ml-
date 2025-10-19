@@ -47,7 +47,7 @@ with col2:
     diabetes = st.selectbox("Diabetes", ["No", "Yes"])
     family_hd = st.selectbox("Family History of Heart Disease", ["No", "Yes"])
     high_bp = st.selectbox("High Blood Pressure", ["No", "Yes"])
-    exercise = st.selectbox("Regular Exercise", ["No", "Yes"])  # Optional 14th feature
+    # exercise = st.selectbox("Regular Exercise", ["No", "Yes"])  # Optional 14th feature
 
 # -------------------------------------------------------------
 # 🔢 Convert Inputs to Numeric Format
@@ -57,17 +57,17 @@ smoking_num = 1 if smoking == "Yes" else 0
 diabetes_num = 1 if diabetes == "Yes" else 0
 family_hd_num = 1 if family_hd == "Yes" else 0
 high_bp_num = 1 if high_bp == "Yes" else 0
-exercise_num = 1 if exercise == "Yes" else 0
+# exercise_num = 1 if exercise == "Yes" else 0
 
 # Create DataFrame in same order as training
 input_df = pd.DataFrame([[
     age, gender_num, blood_pressure, cholesterol, bmi, triglyceride,
     fasting_blood_sugar, crp_level, homocysteine,
-    smoking_num, diabetes_num, family_hd_num, high_bp_num, exercise_num
+    smoking_num, diabetes_num, family_hd_num, high_bp_num
 ]], columns=[
     "Age", "Gender", "Blood Pressure", "Cholesterol Level", "BMI", "Triglyceride Level",
     "Fasting Blood Sugar", "CRP Level", "Homocysteine Level",
-    "Smoking", "Diabetes", "Family Heart Disease", "High Blood Pressure", "Exercise"
+    "Smoking", "Diabetes", "Family Heart Disease", "High Blood Pressure"
 ])
 
 # -------------------------------------------------------------
@@ -99,4 +99,4 @@ if st.button("🔍 Predict Heart Disease Risk"):
 # 📘 Footer
 # -------------------------------------------------------------
 st.markdown("---")
-st.caption("Developed with ❤️ by Yan Reddy | Tuned Random Forest Model | Scaled Inputs | Powered by Streamlit")
+st.caption("Developed by Reddy | Tuned Random Forest Model ")
