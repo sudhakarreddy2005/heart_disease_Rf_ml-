@@ -9,12 +9,12 @@ This app predicts the **likelihood of heart disease** based on medical details.
 Please enter your information below carefully 👇
 """)
 
-@st.cache_resource
-def load_model():
-    model = joblib.load("heart_disease.joblib")
-    return model
+# @st.cache_resource
+# def load_model():
+model = joblib.load("heart_disease.joblib")
+    # return model
 
-model = load_model()
+# model = load_model()
 
 st.header("🧍‍♂️ Patient Medical Information")
 
