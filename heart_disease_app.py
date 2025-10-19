@@ -86,7 +86,7 @@ if st.button("🔍 Predict Heart Disease Risk"):
         prob = None
 
     if prediction == 1:
-        st.error("⚠️ **High Risk:** The model predicts that this person may have heart disease.")d
+        st.error("⚠️ **High Risk:** The model predicts that this person may have heart disease.")
     else:
         st.success("💚 **Low Risk:** The model predicts no significant heart disease risk detected.")
 
