@@ -98,4 +98,4 @@ if st.button("🔍 Predict Heart Disease Risk"):
 # 📘 Footer
 # -------------------------------------------------------------
 st.markdown("---")
-st.caption("Developed with ❤️ by Yan Reddy | Tuned Random Forest Model | Scaled Inputs | Powered by Streamlit")
+st.caption("Developed by Reddy | Tuned Random Forest Model ")
