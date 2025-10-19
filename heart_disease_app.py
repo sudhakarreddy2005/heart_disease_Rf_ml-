@@ -90,9 +90,9 @@ if st.button("🔍 Predict Heart Disease Risk"):
     else:
         st.success("💚 **Low Risk:** The model predicts no significant heart disease risk detected.")
 
-    if prob is not None:
-        st.progress(int(prob))
-        st.write(f"Prediction confidence: **{prob:.2f}%**")
+    # if prob is not None:
+        # st.progress(int(prob))
+        # st.write(f"Prediction confidence: **{prob:.2f}%**")
 
 # -------------------------------------------------------------
 # 📘 Footer
