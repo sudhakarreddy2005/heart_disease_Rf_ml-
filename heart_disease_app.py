@@ -25,7 +25,7 @@ def load_resources():
 model, scaler = load_resources()
 
 # -------------------------------------------------------------
-# 🩺 User Inputs Section
+# 🩺 User Inputs
 # -------------------------------------------------------------
 st.header("🧍‍♂️ Patient Medical Information")
 
@@ -47,7 +47,6 @@ with col2:
     diabetes = st.selectbox("Diabetes", ["No", "Yes"])
     family_hd = st.selectbox("Family History of Heart Disease", ["No", "Yes"])
     high_bp = st.selectbox("High Blood Pressure", ["No", "Yes"])
-    # exercise = st.selectbox("Regular Exercise", ["No", "Yes"])  # Optional 14th feature
 
 # -------------------------------------------------------------
 # 🔢 Convert Inputs to Numeric Format
@@ -57,9 +56,8 @@ smoking_num = 1 if smoking == "Yes" else 0
 diabetes_num = 1 if diabetes == "Yes" else 0
 family_hd_num = 1 if family_hd == "Yes" else 0
 high_bp_num = 1 if high_bp == "Yes" else 0
-# exercise_num = 1 if exercise == "Yes" else 0
 
-# Create DataFrame in same order as training
+# Create DataFrame — must match training columns exactly
 input_df = pd.DataFrame([[
     age, gender_num, blood_pressure, cholesterol, bmi, triglyceride,
     fasting_blood_sugar, crp_level, homocysteine,
@@ -71,9 +69,10 @@ input_df = pd.DataFrame([[
 ])
 
 # -------------------------------------------------------------
-# ⚖️ Apply Scaler (same as training)
+# ⚖️ Apply Scaler
 # -------------------------------------------------------------
-input_scaled = scaler.transform(input_df)
+# Quick fix: use .values to avoid feature name mismatch
+input_scaled = scaler.transform(input_df.values)
 
 # -------------------------------------------------------------
 # 🔮 Predict
@@ -99,4 +98,4 @@ if st.button("🔍 Predict Heart Disease Risk"):
 # 📘 Footer
 # -------------------------------------------------------------
 st.markdown("---")
-st.caption("Developed by Reddy | Tuned Random Forest Model ")
+st.caption("Developed with ❤️ by Yan Reddy | Tuned Random Forest Model | Scaled Inputs | Powered by Streamlit")
